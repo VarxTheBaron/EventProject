@@ -1,3 +1,4 @@
+using EventCore.Entities;
 using EventInfrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -47,4 +48,10 @@ public class EventDTO
     public DateTime EndDateTime { get; set; }
     public string Location { get; set; } = string.Empty;
     public int? MaxParticipants { get; set; }
+}
+
+public class RegistrationsDto
+{
+    public string ParticipantName { get; set; } = string.Empty;
+    public string ParticipantEmail { get; set; } = string.Empty;
 }

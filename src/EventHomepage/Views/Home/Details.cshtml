@@ -4,8 +4,9 @@
     ViewData["Title"] = $"Event details - {Model.Name}";
 }
 
-<header>@Model.Name</header>
-<h1>@Model.Description</h1>
+<header>Event details page</header>
+<h1>@Model.Name</h1>
+<h3>@Model.Description</h3>
 <p>@Model.StartDateTime</p>
 <p>@Model.EndDateTime</p>
 <p>@Model.Location</p>
@@ -14,3 +15,34 @@
 {
     <p>Max Participants: @Model.MaxParticipants</p>
 }
+
+@* <form asp-action="Register" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form> *@
+
+<form asp-action="Register" asp-route-id=@Model.Id method="post">
+    <div class="reg-form">
+        <label for="ParticipantName">Name</label>
+        <input type="text" name="ParticipantName" />
+    </div>
+    <div class="reg-form">
+        <label for="ParticipantEmail">Email</label>
+        <input type="text" name="ParticipantEmail" />
+    </div>
+    <div class="reg-form">
+        <button type="submit" value="Register">Submit</button>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to Events List</a>
+</div>

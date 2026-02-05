@@ -4,6 +4,7 @@ namespace EventHomepage.Models;
 
 public class EventDetailsViewModel
 {
+    public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public DateTime StartDateTime { get; set; }
@@ -14,6 +15,7 @@ public class EventDetailsViewModel
 
     public EventDetailsViewModel(Event _event)
     {
+        Id = _event.Id;
         Name = _event.Name;
         Description = _event.Description;
         StartDateTime = _event.StartDateTime;
