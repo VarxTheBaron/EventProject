@@ -9,7 +9,7 @@ public class HomeController(EventDbContext _db) : Controller
 {
     public IActionResult Index()
     {
-        var events = _db.Events.Where(e => e.StartDateTime > DateTime.Now).Select(e => new EventListViewModel(e)).ToList();
+        var events = _db.Events.Where(e => e.StartDateTime > DateTime.UtcNow).Select(e => new EventListViewModel(e)).ToList();
 
         return View(events);
     }
