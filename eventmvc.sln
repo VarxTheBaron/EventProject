@@ -7,10 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCore", "src\EventCore\EventCore.csproj", "{6F722162-56BD-D241-2067-11A3C0301480}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{C8F899AC-6170-61F7-BDA8-6654F5272104}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventInfrastructure", "src\EventInfrastructure\EventInfrastructure.csproj", "{069DBE0C-40B0-4AF0-9EDD-5E182CC6F337}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCore", "src\EventCore\EventCore.csproj", "{66E7F977-DEB6-4625-9DFE-21FED9A28AC1}"
