@@ -2,7 +2,8 @@
 
 Förslag på steg för steg vad du kan behöva göra:
 
-1. Skapa nytt MVC-projekt i EventHomepage
+1. Skapa mappen EventHomepage och i den ett nytt MVC-projekt
+1. Lägg till ditt MVC-projekt till din solution med Add existing project
 2. Lägg till **EFCore Sqlite** till EventHomepage så att du kan konfigurera en databas i Program.cs
 3. Se till så att projektet refererar EventCore och EventInfrastructure så att du kan använda dina domänmodeller och databasen
 4. Fixa migrations:
