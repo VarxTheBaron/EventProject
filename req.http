@@ -1,0 +1,24 @@
+POST http://localhost:5030/api/v1/events
+Content-Type: application/json
+
+{
+    "name": "Mac Destruction Arena of Super Thinkpads",
+    "description": "Destroy the macs before the time runs out!",
+    "startDateTime": "2026-04-20T06:30:00.000Z",
+    "endDateTime": "2026-04-21T18:30:00.000Z",
+    "location": "Borås",
+    "maxParticipants": 67
+}
+
+###
+
+POST http://localhost:5030/api/v1/events
+Content-Type: application/json
+
+{
+    "Name": "Mac Destruction Arena of Super Thinkpads",
+    "Description": "Destroy the macs before the time runs out!",
+    "StartDateTime": "2026-04-20T06:30:00",
+    "EndDateTime": "2026-04-20T18:30:00",
+    "Location": "Borås"
+}
