@@ -1,0 +1,16 @@
+@model EventHomepage.Models.EventDetailsViewModel
+
+@{
+    ViewData["Title"] = $"Event details - {Model.Name}";
+}
+
+<header>@Model.Name</header>
+<h1>@Model.Description</h1>
+<p>@Model.StartDateTime</p>
+<p>@Model.EndDateTime</p>
+<p>@Model.Location</p>
+<p>Participants count: @Model.ParticipantCount</p>
+@if (Model.MaxParticipants != null)
+{
+    <p>Max Participants: @Model.MaxParticipants</p>
+}
