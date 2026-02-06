@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using EventHomepage.Models;
 using EventInfrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace EventHomepage.Controllers;
 
@@ -19,7 +20,7 @@ public class HomeController(EventDbContext _db) : Controller
     {
         if (id == null || id <= 0) return NotFound();
 
-        var _event = _db.Events.FirstOrDefault(e => e.Id == id);
+        var _event = _db.Events.Where(e => e.Id == id).Include(e => e.Registrations).FirstOrDefault();
         if (_event == null) return NotFound();
 
         return View("Details", new EventDetailsViewModel(_event));
