@@ -4,17 +4,19 @@
     ViewData["Title"] = $"Event details - {Model.Name}";
 }
 
-<header>Event details page</header>
-<h1>@Model.Name</h1>
-<h3>@Model.Description</h3>
-<p>@Model.StartDateTime</p>
-<p>@Model.EndDateTime</p>
-<p>@Model.Location</p>
-<p>Participants count: @Model.ParticipantCount</p>
-@if (Model.MaxParticipants != null)
-{
-    <p>Max Participants: @Model.MaxParticipants</p>
-}
+<div class="EventInfo">
+    <header>Event details page</header>
+    <h1>@Model.Name</h1>
+    <h3>@Model.Description</h3>
+    <p>@Model.StartDateTime</p>
+    <p>@Model.EndDateTime</p>
+    <p>@Model.Location</p>
+    <p>Participants count: @Model.ParticipantCount</p>
+    @if (Model.MaxParticipants != null)
+    {
+        <p>Max Participants: @Model.MaxParticipants</p>
+    }
+</div>
 
 @if (TempData["RegistrationError"] != null)
 {
