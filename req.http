@@ -26,3 +26,17 @@ Content-Type: application/json
 ###
 
 DELETE http://localhost:5030/api/v1/events/3
+
+###
+
+PUT http://localhost:5030/api/v1/events/4
+Content-Type: application/json
+
+{
+    "name": "The Maccening",
+    "description": "OOGA BOOGA",
+    "startDateTime": "2026-04-20T06:30:00.000Z",
+    "endDateTime": "2026-06-07T18:30:00.000Z",
+    "location": "Sjuhärad",
+    "maxParticipants": 67
+}

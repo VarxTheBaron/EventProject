@@ -39,13 +39,31 @@ public class EventsController(EventDbContext _db) : ControllerBase
             return NotFound();
 
         await _db.Registrations.Where(r => r.EventId == id).ExecuteDeleteAsync();
+        await _db.SaveChangesAsync();
 
         return NoContent();
     }
 
-    [HttpPut]
-    public async Task<IActionResult> UpdateEvent(EventDTO dto)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateEvent(int id, EventDTO dto)
     {
-        return NotFound();
+        var _event = _db.Events.Find(id);
+
+        if (_event == null) return NotFound();
+
+        try
+        {
+            var validate = new Event(dto.Name, dto.Description, dto.StartDateTime, dto.EndDateTime, dto.Location, dto.MaxParticipants);
+        }
+        catch
+        {
+            return BadRequest();
+        }
+
+        _db.Events.Entry(_event).CurrentValues.SetValues(dto);
+
+        await _db.SaveChangesAsync();
+
+        return NoContent();
     }
 }
