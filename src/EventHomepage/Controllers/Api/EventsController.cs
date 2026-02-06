@@ -25,7 +25,7 @@ public class EventsController(EventDbContext _db) : ControllerBase
 
             return Created($"/api/v1/events/{newEvent.Id}", newEvent);
         }
-        catch (Exception e)
+        catch
         {
             return BadRequest("Something went wrong when adding the new event.");
         }
