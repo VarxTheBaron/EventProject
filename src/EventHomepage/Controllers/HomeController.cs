@@ -30,8 +30,7 @@ public class HomeController(EventDbContext _db) : Controller
     public async Task<IActionResult> Register(int id, [Bind("ParticipantName,ParticipantEmail")] RegistrationsDto dto)
     {
         if (id <= 0) return BadRequest();
-        var _event = _db.Events.FirstOrDefault(e => e.Id == id);
-        if (_event == null) Console.WriteLine("eventet är null");
+        var _event = _db.Events.Include(e => e.Registrations).FirstOrDefault(e => e.Id == id);
         if (_event == null) return BadRequest();
 
 
