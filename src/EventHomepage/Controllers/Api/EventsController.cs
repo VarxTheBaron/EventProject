@@ -1,6 +1,8 @@
 using EventCore.Entities;
 using EventInfrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SQLitePCL;
 
 namespace EventHomepage.Controllers.Api;
 
@@ -27,5 +29,23 @@ public class EventsController(EventDbContext _db) : ControllerBase
         {
             return BadRequest("Something went wrong when adding the new event.");
         }
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteEvent(int id)
+    {
+
+        if (await _db.Events.Where(e => e.Id == id).ExecuteDeleteAsync() == 0)
+            return NotFound();
+
+        await _db.Registrations.Where(r => r.EventId == id).ExecuteDeleteAsync();
+
+        return NoContent();
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> UpdateEvent(EventDTO dto)
+    {
+        return NotFound();
     }
 }

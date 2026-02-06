@@ -22,3 +22,7 @@ Content-Type: application/json
     "EndDateTime": "2026-04-20T18:30:00",
     "Location": "Borås"
 }
+
+###
+
+DELETE http://localhost:5030/api/v1/events/3
