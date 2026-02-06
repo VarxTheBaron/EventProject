@@ -47,7 +47,7 @@ public class EventsController(EventDbContext _db) : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateEvent(int id, EventDTO dto)
     {
-        var _event = _db.Events.Find(id);
+        var _event = await _db.Events.FindAsync(id);
 
         if (_event == null) return NotFound();
 
