@@ -2,9 +2,11 @@ using EventCore.Entities;
 using EventInfrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 
+namespace EventHomepage.Controllers.Api;
+
 [ApiController]
-[Route("/api/v1/events")]
-public class PostEvent(EventDbContext _db) : ControllerBase
+[Route("/api/v1/[controller]")]
+public class EventsController(EventDbContext _db) : ControllerBase
 {
     [HttpPost]
     public async Task<IActionResult> CreateEvent(EventDTO dto)
