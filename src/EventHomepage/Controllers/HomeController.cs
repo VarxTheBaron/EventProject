@@ -42,9 +42,11 @@ public class HomeController(EventDbContext _db) : Controller
         }
         catch
         {
-            return BadRequest();
+            TempData["RegistrationError"] = $"Error when creating registration!";
+            return RedirectToAction("Events", new { id = _event.Id });
         }
 
+        TempData["RegistrationSuccess"] = $"Successfully made a registration on event: {_event.Name}";
         return RedirectToAction("Events", new { id = _event.Id });
     }
 

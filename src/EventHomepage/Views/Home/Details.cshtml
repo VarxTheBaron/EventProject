@@ -16,6 +16,19 @@
     <p>Max Participants: @Model.MaxParticipants</p>
 }
 
+@if (TempData["RegistrationError"] != null)
+{
+    <div class="Error">
+        @TempData["RegistrationError"]
+    </div>
+}
+@if (TempData["RegistrationSuccess"] != null)
+{
+    <div class="Success">
+        @TempData["RegistrationSuccess"]
+    </div>
+}
+
 <form asp-action="Register" asp-route-id=@Model.Id method="post">
     <div class="reg-form">
         <label for="ParticipantName">Name</label>
@@ -33,3 +46,7 @@
 <div>
     <a asp-action="Index">Back to Events List</a>
 </div>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/details.css" />
+}
