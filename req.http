@@ -1,5 +1,6 @@
 POST http://localhost:5030/api/v1/events
 Content-Type: application/json
+Password: ThinkpadsOverMac
 
 {
     "name": "Mac Destruction Arena of Super Thinkpads",
@@ -14,6 +15,7 @@ Content-Type: application/json
 
 POST http://localhost:5030/api/v1/events
 Content-Type: application/json
+Password: ThinkpadsOverMac
 
 {
     "Name": "Mac Destruction Arena of Super Thinkpads",
@@ -25,7 +27,8 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:5030/api/v1/events/3
+DELETE http://localhost:5030/api/v1/events/9
+Password: ThinkpadsOverMac
 
 ###
 
